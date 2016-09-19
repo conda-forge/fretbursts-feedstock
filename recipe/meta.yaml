@@ -13,7 +13,7 @@ source:
 
 build:
   skip: true  # [win32 and py35]
-  number: 0
+  number: 1
   script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
@@ -33,7 +33,7 @@ requirements:
     - future
     - numpy x.x
     - scipy
-    - pyqt
+    - pyqt 4*
     - matplotlib
     - seaborn
     - pandas
