@@ -1,6 +1,6 @@
 {% set name = "FRETBursts" %}
-{% set version = "0.5.7" %}
-{% set sha256 = "e0b864356a8c2143013211cbad7fa7f65eef81d5abbaa9716d5f34be91592fd5" %}
+{% set version = "0.5.9" %}
+{% set sha256 = "e9ee7ffe33ba5357bd03e8aafd75b2267d1fd64c89c8529a52e4001aceab1e01" %}
 
 package:
   name: {{ name|lower }}
@@ -13,7 +13,7 @@ source:
 
 build:
   skip: true  # [win32 and py35]
-  number: 2
+  number: 0
   script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
@@ -33,7 +33,7 @@ requirements:
     - future
     - numpy x.x
     - scipy
-    - pyqt 4*
+    - pyqt
     - matplotlib
     - seaborn
     - pandas
