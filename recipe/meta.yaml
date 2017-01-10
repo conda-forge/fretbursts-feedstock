@@ -1,6 +1,6 @@
 {% set name = "FRETBursts" %}
-{% set version = "0.5.9" %}
-{% set sha256 = "e9ee7ffe33ba5357bd03e8aafd75b2267d1fd64c89c8529a52e4001aceab1e01" %}
+{% set version = "0.6rc1" %}
+{% set sha256 = "432611c1ece614baf59957fffcb3f523318a03f0e38579550fc0b54353633d1c" %}
 
 package:
   name: {{ name|lower }}
@@ -13,7 +13,7 @@ source:
 
 build:
   skip: true  # [win32 and py35]
-  number: 1
+  number: 0
   script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
