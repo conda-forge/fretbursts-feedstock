@@ -13,7 +13,7 @@ source:
 
 build:
   skip: true  # [win32 and py35]
-  number: 3
+  number: 4
   script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
@@ -33,9 +33,9 @@ requirements:
     - future
     - numpy x.x
     - scipy
-    - pyqt 4.11.*
     - matplotlib
     - seaborn
+    - ipywidgets
     - pandas
     - numba
     - lmfit
