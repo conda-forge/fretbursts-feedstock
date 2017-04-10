@@ -1,6 +1,6 @@
 {% set name = "FRETBursts" %}
-{% set version = "0.6.1" %}
-{% set sha256 = "5082585ecf87e6fd19d80dc621f5a61a439a4cbc030908408458f01d8dff8061" %}
+{% set version = "0.6.2" %}
+{% set sha256 = "cd7edb9f8e797159272c20e404270f321e4a0a05eb4684eec3dcc7da048e11f7" %}
 
 package:
   name: {{ name|lower }}
@@ -13,7 +13,7 @@ source:
 
 build:
   skip: true  # [win32 and py35]
-  number: 3
+  number: 0
   script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
@@ -27,15 +27,17 @@ requirements:
     - seaborn
     - lmfit
     - phconvert
+    - pathlib  # [py27]
 
   run:
     - python
     - future
+    - pathlib  # [py27]
     - numpy x.x
     - scipy
-    - pyqt 4.11.*
     - matplotlib
     - seaborn
+    - ipywidgets
     - pandas
     - numba
     - lmfit
