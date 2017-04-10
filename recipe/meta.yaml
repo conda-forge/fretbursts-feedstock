@@ -1,6 +1,6 @@
 {% set name = "FRETBursts" %}
 {% set version = "0.6.2" %}
-{% set sha256 = "cd7edb9f8e797159272c20e404270f321e4a0a05eb4684eec3dcc7da048e11f7" %}
+{% set sha256 = "d2772b4b3a9e08faa9c7eb8c117fa94532aa1e2a6665e7787033d2b3d2657630" %}
 
 package:
   name: {{ name|lower }}
@@ -8,6 +8,7 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
+       https://pypi.python.org/packages/7a/94/2875c80f04193c4936efd54635f16cc02f3d294d03d99746b109fe4f945f/fretbursts-0.6.2.tar.gz#md5=e7ce45e50bc78435bb06ee519a78fe65
   url: https://github.com/tritemio/{{ name }}/archive/{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
@@ -27,6 +28,7 @@ requirements:
     - seaborn
     - lmfit
     - phconvert
+    - pathlib  # [py27]
 
   run:
     - python
