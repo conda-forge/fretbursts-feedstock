@@ -49,7 +49,7 @@ test:
     - fretbursts.phtools.phrates
 
 about:
-  home: http://tritemio.github.io/FRETBursts/
+  home: http://opensmfs.github.io/FRETBursts/
   license: GPLv2
   license_file: LICENSE.txt
   summary: 'Burst analysis software for single-molecule FRET experiments.'

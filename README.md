@@ -1,7 +1,7 @@
 About fretbursts
 ================
 
-Home: http://tritemio.github.io/FRETBursts/
+Home: http://opensmfs.github.io/FRETBursts/
 
 Package license: GPLv2
 
