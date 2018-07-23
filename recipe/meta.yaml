@@ -16,6 +16,9 @@ build:
   number: 0
   script: python setup.py install --single-version-externally-managed --record record.txt
 
+host:
+  - numpy
+
 requirements:
   build:
     - python
@@ -23,7 +26,7 @@ requirements:
     - future
     - pathlib  # [py27]
     - cython
-    - numpy x.x
+    - {{ pin_compatible('numpy') }}
     - matplotlib
     - seaborn
     - lmfit
@@ -33,7 +36,7 @@ requirements:
     - python
     - future
     - pathlib  # [py27]
-    - numpy x.x
+    - {{ pin_compatible('numpy') }}
     - scipy
     - matplotlib
     - seaborn
