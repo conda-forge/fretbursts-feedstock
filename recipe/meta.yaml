@@ -14,23 +14,16 @@ source:
 build:
   skip: true  # [win32]
   number: 0
-  script: python setup.py install --single-version-externally-managed --record record.txt
+  script: python -m pip install --ignore-installed --no-deps .
 
 requirements:
   build:
-    - python
-    - setuptools
-    - future
-    - pathlib  # [py27]
-    - cython
-    - matplotlib
-    - seaborn
-    - lmfit
-    - phconvert
-
+    - {{ compiler('c') }}
   host:
-    - numpy
-
+    - python
+    - pip
+    - cython
+    - numpy    
   run:
     - python
     - future
@@ -53,6 +46,7 @@ test:
 about:
   home: http://opensmfs.github.io/FRETBursts/
   license: GPLv2
+  license_family: GPL
   license_file: LICENSE.txt
   summary: 'Burst analysis software for single-molecule FRET experiments.'
   description: |
