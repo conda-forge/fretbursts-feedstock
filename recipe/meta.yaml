@@ -23,7 +23,6 @@ requirements:
     - future
     - pathlib  # [py27]
     - cython
-    - numpy
     - matplotlib
     - seaborn
     - lmfit
