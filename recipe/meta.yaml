@@ -1,6 +1,6 @@
 {% set name = "FRETBursts" %}
-{% set version = "0.6.5" %}
-{% set sha256 = "69d9dee9d34e61e5c53289d2a20d1c7b4ed018b22850796f32fb884416999407" %}
+{% set version = "0.7" %}
+{% set sha256 = "d5df10bcfa62efda530e6a9f8866bfd6603c3d4b07e3e2c99f95a9502f5bb494" %}
 
 package:
   name: {{ name|lower }}
@@ -8,32 +8,27 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://github.com/tritemio/{{ name }}/archive/{{ version }}.tar.gz
+  url: https://github.com/OpenSMFS/{{ name }}/archive/{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
   skip: true  # [win32]
   number: 0
-  script: python setup.py install --single-version-externally-managed --record record.txt
+  script: python -m pip install --ignore-installed --no-deps .
 
 requirements:
   build:
+    - {{ compiler('c') }}
+  host:
     - python
-    - setuptools
-    - future
-    - pathlib  # [py27]
+    - pip
     - cython
-    - numpy x.x
-    - matplotlib
-    - seaborn
-    - lmfit
-    - phconvert
-
+    - numpy    
   run:
     - python
     - future
     - pathlib  # [py27]
-    - numpy x.x
+    - {{ pin_compatible('numpy') }}
     - scipy
     - matplotlib
     - seaborn
@@ -49,8 +44,9 @@ test:
     - fretbursts.phtools.phrates
 
 about:
-  home: http://tritemio.github.io/FRETBursts/
+  home: http://opensmfs.github.io/FRETBursts/
   license: GPLv2
+  license_family: GPL
   license_file: LICENSE.txt
   summary: 'Burst analysis software for single-molecule FRET experiments.'
   description: |
