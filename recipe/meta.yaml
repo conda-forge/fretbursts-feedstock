@@ -23,7 +23,7 @@ requirements:
     - python
     - pip
     - cython
-    - numpy    
+    - numpy
   run:
     - python
     - future
@@ -53,7 +53,7 @@ about:
     FRETBursts is a open source software for burst analysis of freely-diffusing
     single-molecule FRET (smFRET) experiments.
   doc_url: http://fretbursts.readthedocs.io/
-  dev_url: https://github.com/tritemio/FRETBursts
+  dev_url: https://github.com/OpenSMFS/FRETBursts
 
 extra:
   recipe-maintainers:
