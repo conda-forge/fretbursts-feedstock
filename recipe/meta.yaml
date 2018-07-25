@@ -12,7 +12,6 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  skip: true  # [win32]
   number: 0
   script: python -m pip install --ignore-installed --no-deps .
 
@@ -37,7 +36,7 @@ requirements:
     - numba
     - lmfit
     - phconvert
-    - pytables <=3.4.3  # [win]
+    - pytables <3.4  # [win]
 
 test:
   imports:
