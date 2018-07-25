@@ -37,7 +37,7 @@ requirements:
     - numba
     - lmfit
     - phconvert
-    - pytables 3.4.3  # [win]
+    - pytables <=3.4.3  # [win]
 
 test:
   imports:
