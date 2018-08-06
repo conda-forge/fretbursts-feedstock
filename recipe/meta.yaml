@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   script: python -m pip install --ignore-installed --no-deps .
 
 requirements:
@@ -36,7 +36,9 @@ requirements:
     - numba
     - lmfit
     - phconvert
-    - pytables <3.4  # [win]
+    - pytables
+    # Fix pytables on windows. See https://github.com/conda-forge/pytables-feedstock/issues/31#issuecomment-410695814
+    - snappy  # [win]
 
 test:
   imports:
