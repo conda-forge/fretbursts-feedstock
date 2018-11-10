@@ -1,6 +1,6 @@
 {% set name = "FRETBursts" %}
 {% set version = "0.7" %}
-{% set sha256 = "d5df10bcfa62efda530e6a9f8866bfd6603c3d4b07e3e2c99f95a9502f5bb494" %}
+{% set sha256 = "21beabf243611b10851e787c0bbf8007fa530d81326fb828ec92a69d869fc3d3" %}
 
 package:
   name: {{ name|lower }}
