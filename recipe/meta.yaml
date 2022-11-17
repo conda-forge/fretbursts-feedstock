@@ -1,6 +1,6 @@
 {% set name = "FRETBursts" %}
-{% set version = "0.7" %}
-{% set sha256 = "21beabf243611b10851e787c0bbf8007fa530d81326fb828ec92a69d869fc3d3" %}
+{% set version = "0.7.1" %}
+{% set sha256 = "0e2d8e45456e5f8d32b8d7cdb93cb7697bff100fdd768f1514d55144aea6c7ec" %}
 
 package:
   name: {{ name|lower }}
@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1001
+  number: 0
   script: python -m pip install --ignore-installed --no-deps .
 
 requirements:
@@ -50,7 +50,7 @@ about:
   license: GPLv2
   license_family: GPL
   license_file: LICENSE.txt
-  summary: 'Burst analysis software for single-molecule FRET experiments.'
+  summary: Burst analysis software for single-molecule FRET experiments.
   description: |
     FRETBursts is a open source software for burst analysis of freely-diffusing
     single-molecule FRET (smFRET) experiments.
