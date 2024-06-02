@@ -55,7 +55,7 @@ test:
 about:
   home: http://opensmfs.github.io/FRETBursts/
   license: GPLv2
-  license_family: GPL-2.0
+  license_family: GPL2
   license_file: LICENSE.txt
   summary: 'Burst analysis software for single-molecule FRET experiments.'
   description: |
