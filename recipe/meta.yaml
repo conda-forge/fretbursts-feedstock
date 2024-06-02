@@ -1,5 +1,5 @@
 {% set name = "FRETBursts" %}
-{% set version = "0.8.2" %}
+{% set version = "0.8.3" %}
 
 
 package:
@@ -9,7 +9,7 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://github.com/OpenSMFS/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: 9a1928f082d027747f60982eba620593958667ee7ae94cd76ebc911169189b45
+  sha256: c4a86337830f94a03880bb66592f656ec6c6468d9f717e7ad21b7def2e554507
 
 build:
   skip: true   # [py<37]
