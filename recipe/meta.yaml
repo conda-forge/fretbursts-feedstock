@@ -1,5 +1,5 @@
 {% set name = "FRETBursts" %}
-{% set version = "0.8.1" %}
+{% set version = "0.8.2" %}
 
 
 package:
@@ -9,7 +9,7 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://github.com/OpenSMFS/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: d60cbd154f0265d10c1141464b6594379279c767c0085454eee520c16e254516
+  sha256: 9a1928f082d027747f60982eba620593958667ee7ae94cd76ebc911169189b45
 
 build:
   skip: true   # [py<37]
@@ -35,15 +35,13 @@ requirements:
     - python
     - pathlib 
     - {{ pin_compatible('numpy') }}
-    - scipy
-    - matplotlib
-    - seaborn
-    - ipywidgets
-    - pandas
+    - scipy >=1.2
+    - seaborn >= 0.11.1
+    - pandas >= 0.23
     - numba
-    - lmfit
+    - lmfit >= 1.0.1
     - phconvert
-    - pytables
+    - pytables >= 3.5
 
 test:
   imports:
