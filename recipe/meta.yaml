@@ -1,6 +1,6 @@
 {% set name = "FRETBursts" %}
-{% set version = "0.7" %}
-{% set sha256 = "21beabf243611b10851e787c0bbf8007fa530d81326fb828ec92a69d869fc3d3" %}
+{% set version = "0.8.2" %}
+{% set sha256 = "9a1928f082d027747f60982eba620593958667ee7ae94cd76ebc911169189b45" %}
 
 package:
   name: {{ name|lower }}
@@ -12,12 +12,13 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1001
+  number: 0
   script: python -m pip install --ignore-installed --no-deps .
 
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
   host:
     - python
     - pip
