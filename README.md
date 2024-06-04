@@ -5,7 +5,7 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/fretbursts-feed
 
 Home: http://opensmfs.github.io/FRETBursts/
 
-Package license: GPLv2
+Package license: GPL-2.0-only
 
 Summary: Burst analysis software for single-molecule FRET experiments.
 
