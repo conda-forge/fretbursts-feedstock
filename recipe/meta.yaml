@@ -9,7 +9,7 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://github.com/OpenSMFS/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: c4a86337830f94a03880bb66592f656ec6c6468d9f717e7ad21b7def2e554507
+  sha256: 9333db4e8453a7341b3410b89c633606d0283e7f23e46f83e9c753b9c9d48128
 
 build:
   skip: true   # [py<37]
