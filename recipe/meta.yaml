@@ -1,6 +1,6 @@
 {% set name = "FRETBursts" %}
-{% set version = "0.7" %}
-{% set sha256 = "21beabf243611b10851e787c0bbf8007fa530d81326fb828ec92a69d869fc3d3" %}
+{% set version = "0.8.3" %}
+
 
 package:
   name: {{ name|lower }}
@@ -9,15 +9,23 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://github.com/OpenSMFS/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  sha256: 9333db4e8453a7341b3410b89c633606d0283e7f23e46f83e9c753b9c9d48128
 
 build:
-  number: 1001
-  script: python -m pip install --ignore-installed --no-deps .
+  skip: true   # [py<37]
+  number: 0
+  script:
+    - export SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
+    - python -m pip install --ignore-installed --no-deps .
 
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib('c') }}
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - cython                                 # [build_platform != target_platform]
+    - numpy                                  # [build_platform != target_platform]
   host:
     - python
     - pip
@@ -25,30 +33,29 @@ requirements:
     - numpy
   run:
     - python
-    - future
-    - pathlib  # [py27]
+    - pathlib 
+    - importlib-metadata
     - {{ pin_compatible('numpy') }}
-    - scipy
-    - matplotlib
-    - seaborn
-    - ipywidgets
-    - pandas
-    - numba
-    - lmfit
-    - phconvert
-    - pytables
-    # Fix pytables on windows. See https://github.com/conda-forge/pytables-feedstock/issues/31#issuecomment-410695814
-    - snappy  # [win]
+    - scipy >=1.2
+    - seaborn >=0.11.1
+    - pandas >=0.23
+    - lmfit >=1.0.1
+    - phconvert >=0.8
+    - pytables >=3.5
 
 test:
   imports:
     - fretbursts
     - fretbursts.phtools.phrates
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: http://opensmfs.github.io/FRETBursts/
-  license: GPLv2
-  license_family: GPL
+  license: GPL-2.0-only
+  license_family: GPL2
   license_file: LICENSE.txt
   summary: 'Burst analysis software for single-molecule FRET experiments.'
   description: |
