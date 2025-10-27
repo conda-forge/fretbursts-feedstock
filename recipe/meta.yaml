@@ -13,7 +13,7 @@ source:
 
 build:
   skip: true   # [py<37]
-  number: 1
+  number: 2
   script:
     - export SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
     - python -m pip install --ignore-installed --no-deps .
@@ -31,11 +31,10 @@ requirements:
     - pip
     - cython
     - numpy
+    - setuptools
   run:
     - python
-    - pathlib 
     - importlib-metadata
-    - {{ pin_compatible('numpy') }}
     - scipy >=1.2
     - seaborn >=0.11.1
     - pandas >=0.23
